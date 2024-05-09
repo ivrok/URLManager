@@ -1,0 +1,21 @@
+{
+    "name": "ivrok/urlmanager",
+    "description": "URLManager: Efficient PHP URL parsing and management with classes for component handling and URL parsing.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Ivan Trufanov",
+            "email": "ivrowork@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ivrok\\URLManager\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4.0"
+    }
+}
