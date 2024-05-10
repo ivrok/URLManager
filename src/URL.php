@@ -16,7 +16,7 @@ class URL
 
         $this->setHTTP();
 
-        if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] === 443) {
+        if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || ($_SERVER['SERVER_PORT'] ?? '') === 443) {
             $this->setHTTPS();
         }
     }
@@ -75,10 +75,7 @@ class URL
 
     public function getURL()
     {
-        $url = $this->protocol . '://' . $this->domain . $this->path;
-        if ($this->queryParameters) {
-            $url .= '?' . http_build_query($this->queryParameters, null, '&', PHP_QUERY_RFC3986);
-        }
+        $url = $this->protocol . '://' . $this->domain . $this->getRelativeURL();
 
         return $url;
     }

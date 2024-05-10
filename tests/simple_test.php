@@ -27,3 +27,11 @@ assertTrue('URLHelper top domain test', URLHelper::isDomainOrTopDomain($url, 'go
 assertTrue('URLHelper path test', URLHelper::isPath($url, '/search/index.php'));
 assertTrue('URLHelper relative URL test', URLHelper::isPathInclude($url, '/search/'));
 assertTrue('URLHelper query test', URLHelper::hasQuery($url, 'q'));
+
+$testUrlString = 'http://google.com/?s';
+$url = URLHelper::parseUrl($testUrlString);
+
+assertTrue('URL 2 Protocol test', $url->getProtocol() !== 'https');
+assertTrue('URL 2 Domain test', $url->getDomain() !== 'www.google.com');
+assertTrue('URL 2 Path test', $url->getPath() !== '/search/index.php');
+assertTrue('URL 2 Query test', $url->getQueryParameter('q') === null);

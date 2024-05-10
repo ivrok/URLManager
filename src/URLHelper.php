@@ -27,7 +27,7 @@ class URLHelper
             array_map(function ($queryParam) use ($url) {
                 $queryParamAr = explode('=', $queryParam, 2);
 
-                $url->addQueryParameter($queryParamAr[0], $queryParamAr[1]);
+                $url->addQueryParameter($queryParamAr[0], $queryParamAr[1] ?? '');
 
             }, explode('&', $parsedURL['query']));
         }
