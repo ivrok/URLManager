@@ -3,7 +3,7 @@
     "description": "URLManager: Efficient PHP URL parsing and management with classes for component handling and URL parsing.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "authors": [
         {
             "name": "Ivan Trufanov",
