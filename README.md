@@ -37,7 +37,7 @@ use Ivrok\URLManager\URLHelper;
 $url = URLHelper::parseUrl('https://www.example.com/index.php?key=value');
 
 // Check if a specific query exists
-echo URLHelper::hasQuery($url, 'key'); // Outputs: false
+echo URLHelper::hasQuery($url, 'key'); // Outputs: true
 
 // Check if the URL path matches a specific path
 echo URLHelper::isPath($url, '/about'); // Outputs: true
